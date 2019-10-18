@@ -1,0 +1,33 @@
+# /etc/conf.d/xdiskd: config file for /etc/init.d/xdiskd
+
+# Config file location
+#xdiskD_CONFIGFILE="/etc/xdisk/xdisk.conf"
+
+# What directory to write pidfile to?  (created and owned by $xdiskD_USER)
+#xdiskD_PIDDIR="/var/run/xdiskd"
+
+# What filename to give the pidfile
+#xdiskD_PIDFILE="${xdiskD_PIDDIR}/xdiskd.pid"
+
+# Where to write xdiskd data (be mindful that the blockchain is large)
+#xdiskD_DATADIR="/var/lib/xdiskd"
+
+# User and group to own xdiskd process
+#xdiskD_USER="xdisk"
+#xdiskD_GROUP="xdisk"
+
+# Path to xdiskd executable
+#xdiskD_BIN="/usr/bin/xdiskd"
+
+# Nice value to run xdiskd under
+#xdiskD_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#xdiskD_OPTS=""
+
+# The timeout in seconds OpenRC will wait for xdiskd to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+xdiskD_SIGTERM_TIMEOUT=60

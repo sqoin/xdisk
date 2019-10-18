@@ -1,0 +1,25 @@
+# It is not recommended to modify this file in-place, because it will
+# be overwritten during package upgrades. If you want to add further
+# options or overwrite existing ones then use
+# $ systemctl edit xdiskd.service
+# See "man systemd.service" for details.
+
+# Note that almost all daemon options could be specified in
+# /etc/xdisk/xdisk.conf
+
+[Unit]
+Description=BitcoinHD daemon
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/xdiskd -daemon -conf=/etc/xdisk/xdisk.conf -pid=/run/xdiskd/xdiskd.pid
+# Creates /run/xdiskd owned by xdisk
+RuntimeDirectory=xdiskd
+User=xdisk
+Type=forking
+PIDFile=/run/xdiskd/xdiskd.pid
+Restart=on-failure
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,6 @@
+usr/local/bin/xdisk-qt usr/bin
+share/pixmaps/xdisk32.xpm usr/share/pixmaps
+share/pixmaps/xdisk16.xpm usr/share/pixmaps
+share/pixmaps/xdisk128.png usr/share/pixmaps
+debian/xdisk-qt.desktop usr/share/applications
+debian/xdisk-qt.protocol usr/share/kde4/services/
